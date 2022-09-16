@@ -1,5 +1,9 @@
 pipeline {
-	agent none
+  agent {
+      docker {
+          image 'ubuntu:latest'
+      }
+  }
   stages {
     stage('Docker Build') {
     	agent any
