@@ -9,7 +9,7 @@ pipeline {
     stage('Docker Build') {
     	agent any
       steps {
-      	sh 'docker build -t hello-world:latest .'
+      	sh 'docker build --progress=plain --no-cache -t hello-world:latest .'
       }
 
     }
