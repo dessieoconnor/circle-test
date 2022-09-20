@@ -8,4 +8,7 @@ node {
         app = docker.build("hello-world")
         echo 'done build'
     }
+    stage('scan') {
+        sh '/usr/local/bin/orca-cli -p des-project --api-token aHR0cHM6Ly9hcHAuYXUub3JjYXNlY3VyaXR5LmlvfHxpWDhiS0NaWkhRRk90VGJPcERMZ2tCYkRCNUZFT2NjSw== image scan hello-world'
+    }
 }
