@@ -1,10 +1,11 @@
 pipeline {
     agent { dockerfile true }
     
-    stages {
         stage('build') {
-  
-          echo 'hello'
+            steps{
+                echo 'hello'
+                echo '123'
+            }
             
         }
         stage('Test') {
@@ -13,7 +14,7 @@ pipeline {
                 sh 'svn --version'
             }
         }
-    }
+  
 
     /*stage('Build image') {
 
