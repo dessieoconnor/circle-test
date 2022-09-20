@@ -1,7 +1,7 @@
 pipeline {
     agent { 
             docker {
-                image 'dessie-test'
+                image 'dessie-test-1133'
           }
     }
     stages{
