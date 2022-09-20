@@ -1,4 +1,5 @@
 node {
+    agent { dockerfile true }
     def app
 
     stage('Build image') {
