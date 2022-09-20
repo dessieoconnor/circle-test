@@ -1,6 +1,7 @@
 pipeline {
-    agent { dockerfile true }
-    docker { image 'dessie-test-image'}
+    agent { dockerfile true
+            docker {image 'dessie-test'}
+          }
     stages{
         stage('Test') {
             steps {
