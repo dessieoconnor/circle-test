@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps{
-                docker.build("my-image-jenkistest:${env.BUILD_ID}")
+                docker.build("my-image-jenkistest")
             }
         }
         stage('Test') {
