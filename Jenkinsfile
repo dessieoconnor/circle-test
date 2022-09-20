@@ -1,10 +1,13 @@
 pipeline {
-    agent { 
-            docker {
-                image 'dessie-test-1133'
-          }
-    }
+   
+    agent { dockerfile true }
+    
     stages{
+        stage('Build image') {
+
+            app = docker.build("test-lamp-des-112233")
+            echo 'done build'
+        }
         stage('Test') {
             steps {
                 sh 'node --version'
