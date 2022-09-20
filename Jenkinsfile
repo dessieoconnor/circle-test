@@ -1,13 +1,7 @@
 pipeline {
     agent { dockerfile true }
+    docker { image 'dessie-test-image'}
     stages{
-        stage('build') {
-            steps{
-                echo 'image built'
-                docker.build("my-image:${env.BUILD_ID}")
-            }
-            
-        }
         stage('Test') {
             steps {
                 sh 'node --version'
