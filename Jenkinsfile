@@ -1,8 +1,7 @@
 pipeline {
     agent { 
-        dockerfile true
             docker {
-                
+                filename 'Dockerfile'
                 image 'dessie-test'
           }
     }
