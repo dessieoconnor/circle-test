@@ -3,10 +3,10 @@ node {
    def app
     
    stage('Build image') {
-     steps {
-               app = docker.build("test-lamp-des-112233")
-               echo 'done build'
-     }
+    
+      app = docker.build("test-lamp-des-112233")
+      echo 'done build'
+     
    }
    stage('Test') {
        sh 'node --version'
