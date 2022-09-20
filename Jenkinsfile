@@ -3,23 +3,12 @@ node {
    def app
     
    stage('Build image') {
-    
       app = docker.build("test-lamp-des-112233")
       echo 'done build'
-     
    }
-   stage('Test') {
-       sh 'node --version'
-       sh 'svn --version'
+   
+   stage('Scan') {
+      sh '/usr/local/bin/orca-cli -p des-project --api-token aHR0cHM6Ly9hcHAuYXUub3JjYXNlY3VyaXR5LmlvfHxpWDhiS0NaWkhRRk90VGJPcERMZ2tCYkRCNUZFT2NjSw== image scan test-lamp-des'
    }
     
-
-    /*stage('Build image') {
-
-        app = docker.build("test-lamp-des")
-        echo 'done build'
-    }
-    stage('scan') {
-        sh '/usr/local/bin/orca-cli -p des-project --api-token aHR0cHM6Ly9hcHAuYXUub3JjYXNlY3VyaXR5LmlvfHxpWDhiS0NaWkhRRk90VGJPcERMZ2tCYkRCNUZFT2NjSw== image scan test-lamp-des'
-    }*/
 }
