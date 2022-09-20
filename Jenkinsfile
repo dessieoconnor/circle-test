@@ -1,21 +1,21 @@
 node {
    
-    def app
+   def app
     
-    stages{
-        stage('Build image') {
-           steps {
-                     app = docker.build("test-lamp-des-112233")
-                     echo 'done build'
-           }
-        }
-        stage('Test') {
-            steps {
-                sh 'node --version'
-                sh 'svn --version'
-            }
-        }
-    }
+
+   stage('Build image') {
+     steps {
+               app = docker.build("test-lamp-des-112233")
+               echo 'done build'
+     }
+   }
+   stage('Test') {
+      steps {
+          sh 'node --version'
+          sh 'svn --version'
+      }
+   }
+    
 
     /*stage('Build image') {
 
