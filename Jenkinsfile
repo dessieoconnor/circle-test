@@ -3,8 +3,8 @@ pipeline {
     stages{
         stage('build') {
             steps{
-                echo 'hello'
-                echo '123'
+                echo 'image built'
+                docker.build("my-image:${env.BUILD_ID}")
             }
             
         }
