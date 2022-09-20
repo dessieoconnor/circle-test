@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
   
-           app = docker.build("my-image-jenkistest")
+          echo 'hello'
             
         }
         stage('Test') {
