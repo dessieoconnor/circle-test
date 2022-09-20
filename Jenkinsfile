@@ -4,9 +4,10 @@ pipeline {
     
     stages{
         stage('Build image') {
-
-            app = docker.build("test-lamp-des-112233")
-            echo 'done build'
+           steps {
+                     app = docker.build("test-lamp-des-112233")
+                     echo 'done build'
+           }
         }
         stage('Test') {
             steps {
