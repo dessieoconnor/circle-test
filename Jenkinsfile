@@ -2,6 +2,11 @@ pipeline {
     agent { dockerfile true }
     
     stages {
+        stage('build') {
+            steps{
+                docker.build("my-image-jenkistest:${env.BUILD_ID}")
+            }
+        }
         stage('Test') {
             steps {
                 sh 'node --version'
