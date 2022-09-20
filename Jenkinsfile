@@ -2,7 +2,6 @@ node {
    
    def app
     
-
    stage('Build image') {
      steps {
                app = docker.build("test-lamp-des-112233")
@@ -10,10 +9,8 @@ node {
      }
    }
    stage('Test') {
-      steps {
-          sh 'node --version'
-          sh 'svn --version'
-      }
+       sh 'node --version'
+       sh 'svn --version'
    }
     
 
