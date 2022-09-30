@@ -6,6 +6,8 @@ node {
    stage('checkout scm') {
       echo 'checkout'
       checkout scm
+
+      stash 'source'
       echo 'checkout done'
    }
    
