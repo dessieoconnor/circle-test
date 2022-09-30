@@ -1,15 +1,6 @@
 node {
    
    def app
-   agent { dockerfile true }
-   
-   stage('checkout scm') {
-      echo 'checkout'
-      checkout scm
-
-      stash 'source'
-      echo 'checkout done'
-   }
    
    stage('Build image') {
       app = docker.build("log4j-poc")
