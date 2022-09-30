@@ -1,7 +1,7 @@
 node {
    
    def app
-    
+   agent { dockerfile true }
    stage('Build image') {
       app = docker.build("log4j-poc")
       echo 'done build'
