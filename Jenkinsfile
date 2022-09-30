@@ -2,6 +2,12 @@ node {
    
    def app
    
+    stage('Checkout code') {
+        steps {
+            checkout scm
+        }
+    }
+   
    stage('Build image') {
       app = docker.build("log4j-poc")
       echo 'done build'
