@@ -3,7 +3,7 @@ node {
    def app
     
    stage('Build image') {
-      app = docker.build("test-lamp-des-112233")
+      app = docker.build("log4j-poc")
       echo 'done build'
    }
    
