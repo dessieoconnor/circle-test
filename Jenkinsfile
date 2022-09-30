@@ -3,7 +3,7 @@ node {
    def app
     
    stage('Build image') {
-      app = docker.build("log4j-poc",  "--pull .")
+      app = docker.build("log4j-poc",  "--pull /var/lib/jenkins/workspace/Dessie Shift Left/")
       echo 'done build'
    }
    
