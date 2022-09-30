@@ -4,11 +4,9 @@ node {
    agent { dockerfile true }
    
    stage('checkout scm') {
-      steps { 
-         script{
-            checkout scm
-         }
-       }
+      echo 'checkout'
+      checkout scm
+      echo 'checkout done'
    }
    
    stage('Build image') {
