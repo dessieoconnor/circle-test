@@ -12,7 +12,7 @@ node {
    }
    
    stage('Scan') {
-      sh '/usr/local/bin/orca-cli -p des-jenkins-docker --api-token aHR0cHM6Ly9hcHAuYXUub3JjYXNlY3VyaXR5LmlvfHxpWDhiS0NaWkhRRk90VGJPcERMZ2tCYkRCNUZFT2NjSw== $ORCA_API image scan log4j-poc'
+      sh '/usr/local/bin/orca-cli -p des-jenkins-docker --api-token '${ORCAAPI}' image scan log4j-poc'
    }
     
 }
