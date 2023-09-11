@@ -1,9 +1,7 @@
 #!/usr/bin/env groovy
 pipeline {
   agent {
-    dockerfile {
-      filename: 'Dockerfile.orca' // Use the Dockerfile for Orca
-    }
+
   }
   environment {
     IMAGE_NAME = 'log4j-poc'
