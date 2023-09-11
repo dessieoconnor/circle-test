@@ -7,7 +7,7 @@ pipeline {
     }
   }
   environment {
-    IMAGE_NAME = '<image name>'
+    IMAGE_NAME = 'LOG4J'
     PROJECT_KEY = 'des-jenkins-docker' // Set the desired project for CLI scanning
   }
   stages {
