@@ -1,24 +1,16 @@
-#!/usr/bin/env groovy
-pipeline {
-  agent {
-    dockerfile {
-      filename 'Dockerfile.orca' // Use the Dockerfile for Orca
+node {
+   
+    stage('Checkout code') {
+      checkout scm
     }
-  }
-  environment {
-    IMAGE_NAME = 'log4j-poc'
-    PROJECT_KEY = 'des-jenkins-docker' // Set the desired project for CLI scanning
-  }
-  stages {
-    stage('scan') {
-      steps {
-        withCredentials([string(credentialsId: 'ORCA_SECURITY_API_TOKEN', variable: 'TOKEN')]) {
-          sh '''
-            # Run Orca-CLI with the specified project and image
-            orca-cli -p ${PROJECT_KEY} --api-token aHR0cHM6Ly9hcHAuYXUub3JjYXNlY3VyaXR5LmlvfHxYcFRUb1l2Q1owbW9IZ1lDZTdqN1JGRWlBV3p1ZnhXcw== image scan ${IMAGE_NAME}
-          '''
-        }
-      }
-    }
-  }
+   
+   stage('Build image') {
+      app = docker.build("log4j-poc")
+      echo 'done build'
+   }
+   
+   stage('Scan') {
+      sh '/usr/local/bin/orca-cli -p des-jenkins-docker --api-token aHR0cHM6Ly9hcHAuYXUub3JjYXNlY3VyaXR5LmlvfHxYcFRUb1l2Q1owbW9IZ1lDZTdqN1JGRWlBV3p1ZnhXcw== image scan log4j-poc'
+   }
+    
 }
