@@ -15,7 +15,7 @@ pipeline {
         withCredentials([string(credentialsId: 'ORCA_SECURITY_API_TOKEN', variable: 'TOKEN')]) {
           sh '''
             # Run Orca-CLI with the specified project and image
-            orca-cli -p ${PROJECT_KEY} image scan ${IMAGE_NAME}
+            orca-cli -p ${PROJECT_KEY} --api-token aHR0cHM6Ly9hcHAuYXUub3JjYXNlY3VyaXR5LmlvfHxYcFRUb1l2Q1owbW9IZ1lDZTdqN1JGRWlBV3p1ZnhXcw== image scan ${IMAGE_NAME}
           '''
         }
       }
