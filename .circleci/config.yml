@@ -14,6 +14,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
+      - setup_remote_docker: version: 20.10.14
       - run:
           name: Orca source code security scan
           command: |
