@@ -19,7 +19,7 @@ jobs:
           command: |
             apt update && apt install -y curl
             curl -sfL 'https://raw.githubusercontent.com/orcasecurity/orca-cli/main/install.sh' | bash
-            orca-cli --project-key des-circle --api-token aHR0cHM6Ly9hcHAuYXUub3JjYXNlY3VyaXR5LmlvfHxkS20zdm9GallJNmQ0ZG1PMkJmbkxheFFtd0xYd3A3TA== mage scan log4j-poc
+            orca-cli --project-key des-circle --api-token aHR0cHM6Ly9hcHAuYXUub3JjYXNlY3VyaXR5LmlvfHxkS20zdm9GallJNmQ0ZG1PMkJmbkxheFFtd0xYd3A3TA== image scan log4j-poc
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
